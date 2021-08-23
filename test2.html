@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <input type="checkbox" name="box"></input>AAA
+        </li>
+        <li>
+            <input type="checkbox" name="box"></input>BBB
+        </li>
+        <li>
+            <input type="checkbox" name="box"></input>CCC
+        </li>
+        <li>
+            <input type="checkbox" name="box"></input>DDD
+        </li>
+        <li>
+            <input type="checkbox" name="box"></input>EEE
+        </li>
+    </ul>
+
+    <div id="target">
+
+    </div>
+
+<script>
+
+    var arr = document.querySelectorAll("input")//모든 input태그 값을 가져옴
+    console.log(arr)
+
+    for(var i = 0; i < arr.length; i++) {
+        arr[i].checked = true
+    }
+
+    var target = document.querySelector("#target")
+
+    target.innerHTML = "<button>AAAA</button>"
+
+    var sample = document.querySelector("input").parentElement //li
+
+    var parent = sample.parentElement //ul
+
+    parent.removeChild(sample) //li 삭제
+
+</script>
+</body>
+</html>
