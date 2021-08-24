@@ -8,93 +8,148 @@
 
 <style>
 
-    html body {
-        height: 100%;
-    }
-
     * {
         margin: 0px;
         padding: 0px;
     }
 
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        padding: 2%;
+        text-align: center;
+    }
+
+    .order {
+        display: flex;
+    }
+
     .items {
         display: flex;
         flex-wrap: wrap;
+        flex-direction: row;
         height: 100vh;
         justify-content: space-around;
         align-items: center;
+    }
+
+    .menus {
+        flex-direction: column;
     }
 
     li {
         list-style: none;
     }
 
-    section {
-        display: flex;
-        flex-direction: row;
+    h1 {
+        font-size: 30px;
+    }
+
+    .aside {
+        width: 50%;
+    }
+
+    .total {
+        font-size: 10px;
+        margin-top: 3vh;
+    }
+
+    .cart {
+        margin-top: 10vh;
+    }
+
+    .menu {
+        align-items:;
     }
 
 </style>
 
-<section class="choice">
-    <h1>MENU</h1>
-    <ul class="items">
-        <li>
-            <div class="img">
-                <img src="img/빅맥.png">
-            </div>
-            <div>
-                <span class="menu">빅맥</span>
-                <span class="price">5000</span>
-            </div>
-        </li>
-        <li>
-            <div class="img">
-                <img src="img/상하이.png">
-            </div>
-            <div>
-                <span class="menu">상하이버거</span>
-                <span class="price">6000</span>
-            </div>
-        </li>
-        <li>
-            <div class="img">
-                <img src="img/불고기.png">
-            </div>
-            <div>
-                <span class="menu">불고기버거</span>
-                <span class="price">3500</span>
-            </div>
-        </li>
-        <li>
-            <div class="img">
-                <img src="img/치즈.png">
-            </div>
-            <div>
-                <span class="menu">치즈버거</span>
-                <span class="price">3000</span>
-            </div>
-        </li>
-    </ul>
+
+<section class="container">
+    <div class="order">
+        <section class="menus">
+            <h1>MENU</h1>
+            <ul class="items">
+                <li>
+                    <div class="img">
+                        <img src="img/빅맥.png">
+                    </div>
+                    <div>
+                        <span class="menu">빅맥</span>
+                        <span class="price">5000</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="img/상하이.png">
+                    </div>
+                    <div>
+                        <span class="menu">상하이버거</span>
+                        <span class="price">6000</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="img/불고기.png">
+                    </div>
+                    <div>
+                        <span class="menu">불고기버거</span>
+                        <span class="price">3500</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="img/치즈.png">
+                    </div>
+                    <div>
+                        <span class="menu">치즈버거</span>
+                        <span class="price">3000</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="img/1955.png">
+                    </div>
+                    <div>
+                        <span class="menu">1955버거</span>
+                        <span class="price">7000</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="img/더블불고기.png">
+                    </div>
+                    <div>
+                        <span class="menu">더블불고기버거</span>
+                        <span class="price">5500</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="img">
+                        <img src="img/슈슈.png">
+                    </div>
+                    <div>
+                        <span class="menu">슈슈버거</span>
+                        <span class="price">7500</span>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <aside class="aside">
+            <h1>RECEIPT</h1>
+                <div class="total">
+                    <h2 id="total"></h2>
+                </div>
+                <ul class="cart">
+
+                </ul>
+        </aside>
+    </div>
 </section>
 
-<section class="receipt">
-    <h1>RECEIPT</h1>
-    <div>
-        <ul class="cart">
-
-        </ul>
-    </div>
-    <div>
-        <h2 id="total"></h2>
-    </div>
-</section>
 <script>
-
-    // document.querySelector(".items")
-    // .addEventListener("click", function (e) {
-    //   console.log(this)
-    // }, false)
 
     var cart = document.querySelector(".cart")
     var arr = document.querySelectorAll(".items li")
@@ -152,7 +207,7 @@
             sum += parseInt(priceSpans[i].innerHTML)
         }
 
-        total.innerHTML = sum
+        total.innerHTML = "<h2>결제금액 : " + sum + "원 </h2>"
 
     }
 </script>
